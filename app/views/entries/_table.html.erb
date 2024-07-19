@@ -1,0 +1,20 @@
+<table class="min-w-full bg-white">
+  <thead class="bg-gray-800 text-white">
+    <tr>
+      <th class="w-1/12 py-2">#</th>
+      <th class="w-6/12 py-2">Title</th>
+      <th class="w-2/12 py-2">Points</th>
+      <th class="w-3/12 py-2">Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr class="border-b">
+        <td class="py-2 text-center"><%= entry.number %></td>
+        <td class="py-2"><%= entry.title %></td>
+        <td class="py-2 text-center"><%= entry.points %></td>
+        <td class="py-2 text-center"><%= entry.comments %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

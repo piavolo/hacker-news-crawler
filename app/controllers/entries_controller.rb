@@ -11,7 +11,13 @@ class EntriesController < ApplicationController
     end
 
     @entries = Entry.limit(30)
-
     @entries = filter_entries(@entries, params[:filter]) if params[:filter].present?
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("entries_table", partial: "entries/table", locals: { entries: @entries })
+      end
+    end
   end
 end
