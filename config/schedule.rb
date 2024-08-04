@@ -27,5 +27,4 @@ every 1.minutes do
   runner 'puts Time.now'
   runner 'puts Rails.env'
   runner 'Entry.update_entries_from_hacker_news'
-  runner 'puts ""'
 end
